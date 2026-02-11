@@ -85,7 +85,6 @@ sortBtn.addEventListener('click', () => {
     sortAscending = !sortAscending;
     
     // Update button text and icon
-    const icon = sortBtn.querySelector('svg polyline');
     if (sortAscending) {
         sortBtn.innerHTML = `
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
