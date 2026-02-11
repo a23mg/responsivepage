@@ -349,6 +349,29 @@ a {
     color: var(--text-primary);
 }
 
+.logout-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: var(--danger-color);
+    color: white;
+}
+
+.logout-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
 /* Content Area */
 .content {
     flex: 1;

@@ -1,3 +1,8 @@
+// Authentication Check
+if (localStorage.getItem('adminAuthenticated') !== 'true') {
+    window.location.href = 'login.html';
+}
+
 // Theme Management
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
@@ -255,3 +260,25 @@ observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
 window.addEventListener('load', () => {
     initChart();
 });
+
+// Logout Functionality
+const logoutBtn = document.getElementById('logoutBtn');
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('adminAuthenticated');
+            localStorage.removeItem('adminLoginTime');
+            window.location.href = 'login.html';
+        }
+    });
+}
+
+// Display login time info
+const userName = document.getElementById('userName');
+if (userName) {
+    const loginTime = localStorage.getItem('adminLoginTime');
+    if (loginTime) {
+        const loginDate = new Date(loginTime);
+        userName.title = `Logged in: ${loginDate.toLocaleString()}`;
+    }
+}
